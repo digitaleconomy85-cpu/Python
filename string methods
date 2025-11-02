@@ -29,31 +29,31 @@ print("My name is {}".format("Ali"))  # Output: My name is Ali
 person = {"name": "Ali", "age": 20}
 print("My name is {name}, age {age}".format_map(person))  # Output: My name is Ali, age 20
 
-# 11. index()
+# 11. index()  - find() da -1 qiymat berardi agar topilmaganda endi esa error beradi
 print("Hello".index("e"))  # Output: 1
 
-# 12. isalnum()
+# 12. isalnum()  - belgi va probel ishtirok etmagan  bo`lsa true aks holda false
 print("Python3".isalnum())  # Output: True (faqat harf va raqamlar bor)
 
-# 13. isalpha()
+# 13. isalpha() - harfdan boshqa istalgan narsa bo`lsa false
 print("Python".isalpha())  # Output: True (faqat harflar)
 
-# 14. isascii()
+# 14. isascii() - inglizcha bo`lsa true boshqa tillar bo`lsa false
 print("Hello!".isascii())  # Output: True (ASCII belgilar)
 
-# 15. isdecimal()
+# 15. isdecimal() - son bo`lishi kerak
 print("1234".isdecimal())  # Output: True (raqamlar)
 
-# 16. isdigit()
+# 16. isdigit() -daraja ko`rinishda yoki son bo`lishi kerak
 print("²".isdigit())  # Output: True (raqam belgisi sifatida)
 
-# 17. isidentifier()
+# 17. isidentifier() - identifikatorni standard ga mosligini tekshiradi!
 print("my_var".isidentifier())  # Output: True (Python identifikatoriga mos)
 
-# 18. islower()
+# 18. islower() - kichik harflarda yozilgan bo`lsa hammasi true
 print("hello".islower())  # Output: True
 
-# 19. isnumeric()
+# 19. isnumeric() - xitoycha raqam,o`nli kasr,son,daraja barchasi uchun true
 print("½".isnumeric())  # Output: True (son ifodalaydi)
 
 # 20. isprintable()
@@ -84,50 +84,51 @@ print("   Hello".lstrip())  # Output: Hello
 table = str.maketrans("ae", "12")
 print("apple".translate(table))  # Output: 1ppl2
 
-# 29. partition()
+# 29. partition() -
 print("I love Python".partition("love"))  # Output: ('I ', 'love', ' Python')
 
-# 30. replace()
+# 30. replace() - o`rnini egallaydi
 print("I love Python".replace("Python", "Data"))  # Output: I love Data
 
-# 31. rfind()
+# 31. rfind() -indexni oladi va eng o`ng tarafda turganni   -1
 print("banana".rfind("a"))  # Output: 5 (oxirgi “a” indeksi)
 
-# 32. rindex()
+# 32. rindex()   indexni oladi va eng o`ng tarafda turganni  Error
 print("banana".rindex("a"))  # Output: 5
 
-# 33. rjust()
+# 33. rjust() - 6 ta xonali bo`lguncha * bilan to`ldir!
 print("Hi".rjust(6, "*"))  # Output: ****Hi
 
-# 34. rpartition()
+# 34. rpartition() - o`ng tarafdan tekshirib boradi!
 print("I love Python".rpartition("love"))  # Output: ('I ', 'love', ' Python')
 
 # 35. rsplit()
 print("apple,banana,grape".rsplit(",", 1))  # Output: ['apple,banana', 'grape']
 
-# 36. rstrip()
+# 36. rstrip() - chap tarafdagi probelni o`chiradi
 print("Hello   ".rstrip())  # Output: Hello
 
-# 37. split()
+# 37. split() - splitlines() da farqi \n yozilmaydi!
 print("apple,banana,grape".split(","))  # Output: ['apple', 'banana', 'grape']
 
-# 38. splitlines()
+# 38. splitlines() - ajratadi '', '' bilan
 print("Hello\nWorld\n!".splitlines())  # Output: ['Hello', 'World', '!']
 
-# 39. startswith()
+# 39. startswith()  - nima bilan boshlanadi?
 print("Python".startswith("Py"))  # Output: True
 
-# 40. strip()
+# 40. strip()  - chap va o`ngdagi probellarni olib tashlaydi
 print("  Hello  ".strip())  # Output: Hello
 
-# 41. swapcase()
+# 41. swapcase() - bunda lower -> upper ga  upper -> lower ga aylanadi
 print("Hello World".swapcase())  # Output: hELLO wORLD
 
-# 42. title()
+# 42. title() - capitalize() dan farqi bunda faqat 1-harfga tegishli
 print("hello world".title())  # Output: Hello World
 
-# 43. upper()
+# 43. upper() - hammasini katta harflarga o`zgartiradi`
 print("python".upper())  # Output: PYTHON
 
-# 44. zfill()
+# 44. zfill() - .zfill(kutilgan_uzunlik)  ga yetguncha oldidan 0 bilan to`ldiradi   
 print("42".zfill(5))  # Output: 00042
+ 
