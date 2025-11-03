@@ -1,0 +1,86 @@
+'''
+1. list — tartibli (ordered), o‘zgaruvchan (mutable), takrorlanadigan elementlarni saqlaydi
+🔹 Tavsif:
+Elementlar tartib bilan joylashgan (index orqali kirish mumkin)
+Ichidagi qiymatlar o‘zgartiriladi, o‘chirildi, qo‘shiladi
+Takrorlanuvchi qiymatlar bo‘lishi mumkin
+🔹 Kod:
+'''
+
+fruits = ["apple", "banana", "apple", "cherry"]
+print(fruits)              # ['apple', 'banana', 'apple', 'cherry']
+print(fruits[1])           # banana
+fruits.append("grape")     # element qo‘shish
+fruits[0] = "pear"         # elementni o‘zgartirish
+print(fruits)              # ['pear', 'banana', 'apple', 'cherry', 'grape']
+
+
+'''
+2. tuple — tartibli (ordered), lekin o‘zgarmas (immutable)
+🔹 Tavsif:
+List ga o‘xshaydi, faqat ichidagi qiymatlarni o‘zgartirib bo‘lmaydi
+Qisqasi, doimiy ma’lumot saqlash uchun ishlatiladi
+Takrorlanuvchi qiymatlar bo‘lishi mumkin
+🔹 Kod:
+'''
+
+numbers = (1, 2, 3, 3)
+print(numbers)        # (1, 2, 3, 3)
+print(numbers[0])     # 1
+# numbers[1] = 5    xato beradi, chunki tuple o‘zgarmaydi
+
+
+'''
+3. set — tartibsiz (unordered), o‘zgaruvchan (mutable), takrorlanmaydigan elementlar to‘plami
+Elementlar tartibda saqlanmaydi
+Har bir qiymat faqat 1 marta saqlanadi
+Qo‘shish va o‘chirish mumkin
+To‘plamlar ustida matematik amallar bajarish mumkin (union, intersection…)
+🔹 Kod:
+'''
+
+colors = {"red", "green", "blue", "green"}
+print(colors)           # {'red', 'green', 'blue'} (takror yo‘q)
+colors.add("yellow")    # yangi qo‘shish
+colors.remove("red")    # o‘chirish
+print(colors)           # {'green', 'blue', 'yellow'}
+
+'''
+4. frozenset — set’ning o‘zgarmas (immutable) varianti
+🔹 Tavsif:
+set kabi takrorlanmaydigan elementlar to‘plami
+Lekin add() yoki remove() bilan o‘zgartirib bo‘lmaydi
+Hashable bo‘lgani uchun dictionary kaliti (key) sifatida ishlatiladi
+🔹 Kod:
+'''
+
+frozen_colors = frozenset(["red", "green", "blue"])
+print(frozen_colors)       # frozenset({'red', 'green', 'blue'})
+# frozen_colors.add("yellow")   Xato, o‘zgarmaydi
+
+
+'''
+5. dict (dictionary) — kalit-qiymat (key-value) juftligi
+🔹 Tavsif:
+Har bir element kalit (key) va qiymat (value) dan iborat
+Kalitlar takrorlanmaydi
+Qiymatlarni kalit orqali tez topish mumkin
+Juda foydali tuzilma (JSON kabi)
+'''
+
+student = {"name": "Ali", "age": 20, "city": "Tashkent"}
+print(student["name"])      # Ali
+student["age"] = 21         # qiymatni o‘zgartirish
+student["major"] = "IT"     # yangi juftlik qo‘shish
+print(student)              # {'name': 'Ali', 'age': 21, 'city': 'Tashkent', 'major': 'IT'}
+
+
+'''
+| Tuzi lma      | Tartibli              | O‘zgaradimi | Takror bo‘ladimi    | Kirish usuli  | Sintaksis          |
+| ------------- | --------------------- | ----------- | ------------------- | ------------- | ------------------ |
+| **list**      | ✅ Ha                  | ✅ Ha        | ✅ Ha                | index (0,1,2) | `["a","b"]`        |
+| **tuple**     | ✅ Ha                  | ❌ Yo‘q      | ✅ Ha                | index (0,1,2) | `("a","b")`        |
+| **set**       | ❌ Yo‘q                | ✅ Ha        | ❌ Yo‘q              | for loop      | `{"a","b"}`        |
+| **frozenset** | ❌ Yo‘q                | ❌ Yo‘q      | ❌ Yo‘q              | for loop      | `frozenset({...})` |
+| **dict**      | ✅ Ha (3.7+ versiyada) | ✅ Ha        | ❌ (kalitlar unikal) | key orqali    | `{"key": "value"}` |
+'''
