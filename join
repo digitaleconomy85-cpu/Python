@@ -1,0 +1,111 @@
+# 1) union - |  belgi bilan ishlatish mumkin lekin 
+# bu belgi faqat setni set ga qo`shadi 
+# union esa tuple+list qilib ishlatish mumkin!`
+car={"BMW","Mustang","Ferrari"}
+color={"Oq","Qora","Qizil"}
+add1=car.union(color)
+print(add1)
+add2=car|color
+print(add2)
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+age={18,32,21,19,45}
+grade={"A","B","C"}
+name={"Jack","Alex"}
+fruits={"apple","cherry"}
+add1=age.union(grade,name,fruits)
+print(add1)
+add2=age|grade|name|fruits
+print(add2)
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+# Birlashtirish — barcha elementlarni qaytaradi (takrorlanuvchi elementlar 1 marta olinadi).
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a.union(b))
+# Natija: {1, 2, 3, 4, 5}  union() yangi set qaytaradi, asl a o‘zgarmaydi.
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+# 2) update() - union() ga o‘xshaydi, lekin a setning o‘zini o‘zgartiradi (yangi to‘plam yaratmaydi).
+a = {1, 2, 3}
+b = {3, 4, 5}
+a.update(b)
+print(a)
+# Natija: {1, 2, 3, 4, 5}
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+# 3) intersection() - & (kesishma) ikkalasida borini oladi 
+a = {1, 2, 3}
+b = {2, 3, 4}
+print(a.intersection(b))
+# Natija: {2, 3}    Yangi set qaytaradi, asl a o‘zgarmaydi.
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.intersection(set2)
+print(set3)     # Natija:  {'apple'}
+
+set4 = set1 & set2
+print(set4)     # Natija:  {'apple'}
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+set1 = {"apple", 1, "banana", 0, "cherry"}
+set2 = {False, "google", "microsoft", "apple", True}
+
+set3 = set1.intersection(set2)
+print(set3)   # Natija:  {False, True, 'apple'}
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+# 4) difference() - Farq — a setda bor, lekin b setda yo‘q elementlarni qaytaradi.
+a = {1, 2, 3, 4}
+b = {3, 4, 5}
+print(a.difference(b))
+# Natija: {1, 2}  a\b
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+# difference() ni o`rniga (-) belgidan ham foydalanish mumkin
+set1 = {"apple", "banana" , "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set3 = set1 - set2
+print(set3)
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+# 5) symmetric_difference() - a = {1, 2, 3}
+b = {3, 4, 5}
+print(a.symmetric_difference(b))
+# Natija: {1, 2, 4, 5}   yangi set qaytaradi
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+set1 = {"apple", "banana" , "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.symmetric_difference(set2)
+print(set3)
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set4 = set1 ^ set2
+print(set4)
+
+""""""""""""""""""""""""""""" """""""""""""""""""""""""""""""""
+
+
+# 6) symmetric_difference_update() - symmetric_difference() ga o‘xshaydi, lekin a setning o‘zini o‘zgartiradi.
+a = {1, 2, 3}
+b = {3, 4, 5}
+a.symmetric_difference_update(b)
+print(a)
+# Natija: {1, 2, 4, 5}
+
